@@ -41,6 +41,6 @@ async function bootstrap() {
   // 使用ws适配器
   app.useWebSocketAdapter(new WsAdapter(app))
 
-  await app.listen(3000);
+  await app.listen(83);
 }
 bootstrap();

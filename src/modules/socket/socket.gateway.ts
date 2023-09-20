@@ -26,8 +26,9 @@ export class SocketGateway {
   handleMessage(client: any, payload: any) {
     const jsonMsg = JSON.parse(payload);
     this.server.clients.forEach((item: ISocket) => {
-        console.log('id:'+jsonMsg.id);
-        item.send(JSON.stringify(jsonMsg));
+        if(item.id !== client.id){
+          item.send(JSON.stringify(jsonMsg));
+        }
     });
   }
 }
